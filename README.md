@@ -91,27 +91,14 @@ You can clone the repository and make changes to it. It is open for all.
 </a>  
 
 ## Gallery
-```
-Home - http://127.0.0.1:8000/
-```
-
-![image](https://user-images.githubusercontent.com/85509795/205471938-d09a233b-7532-4e66-ba9f-83076e7c921e.png)
 
 
-```
-Services - http://127.0.0.1:8000/services/
-```
-![image](https://user-images.githubusercontent.com/85509795/205471959-03458f3f-b998-456e-a9de-d992fcc38685.png)
+![image](https://user-images.githubusercontent.com/85509795/205473592-a830c23f-fd89-4c79-a705-afc791ced4a8.png)
+
+![image](https://user-images.githubusercontent.com/85509795/205473616-7f111c00-f1e3-4df0-a62a-f50735855dd9.png)
 
 
-
-
-```
-    download youtube video - http://127.0.0.1:8000/youtubedownload
-```
-![image](https://user-images.githubusercontent.com/85509795/205472183-b469a4c8-e921-4558-95bf-9de6f4f9ed6e.png)
-
-
+![image](https://user-images.githubusercontent.com/85509795/205473631-e7ef5aed-8176-4da9-adc4-4b9a9670f896.png)
 
 
 
