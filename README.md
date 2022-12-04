@@ -114,3 +114,8 @@ Services - http://127.0.0.1:8000/services/
 
 
 
+
+
+Farmry is a website which helps farmers to predict rainfall,crop suggestion based on environment,soil and weather prediction.
+
+Top 5 in a hackathon organized by Microsoft azure subsidoary company - https://www.hackerearth.
