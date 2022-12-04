@@ -15,10 +15,16 @@
         /* align-items: center; */
         flex-wrap: wrap;
     }
+
+    /* on over cards glow and pop */
+    .card:hover {
+        box-shadow: 0 0 11px rgba(33, 33, 33, .2);
+        transform: scale(1.05);
+    }
 </style>
 <div class="container">
     <div class="flex justify-center">
-        <div class="rounded-lg shadow-lg bg-white max-w-sm">
+        <div class="rounded-lg shadow-lg bg-white max-w-sm card">
             <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
                 <img class="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/182.jpg" alt="" />
             </a>
@@ -36,7 +42,7 @@
     </div>
 
     <div class="flex justify-center">
-        <div class="rounded-lg shadow-lg bg-white max-w-sm">
+        <div class="rounded-lg shadow-lg bg-white max-w-sm card">
             <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
                 <img class="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/182.jpg" alt="" />
             </a>
@@ -53,7 +59,7 @@
     </div>
 
     <div class="flex justify-center">
-        <div class="rounded-lg shadow-lg bg-white max-w-sm">
+        <div class="rounded-lg shadow-lg bg-white max-w-sm card">
             <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
                 <img class="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/182.jpg" alt="" />
             </a>
@@ -203,6 +209,7 @@
     </div>
 </div>
 
+<br><br><br>
 <!-- Modal for Fertilizer prediction -->
 <!-- Temparature,Humidity ,Moisture,Soil Type,Crop Type,Nitrogen,Potassium,Phosphorous,Fertilizer Name -->
 <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"

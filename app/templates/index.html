@@ -6,6 +6,9 @@
 
 {% include 'navbar.html' %}
 
+<!--fix carousel to the bottom-->
+
+
 <div id="carouselExampleCaptions" class="carousel slide relative" data-bs-ride="carousel">
     <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -51,6 +54,79 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
+
+<!--end carousel-->
+<br><br>
+<!--start cards-->
+
+<style>
+    /* on mouse over glow and pop */
+    .card:hover {
+        box-shadow: 0 0 11px rgba(33, 33, 33, .2);
+        transform: scale(1.05);
+    }
+</style>
+
+<div class="container mx-auto px-4">
+    <div class="flex flex-wrap">
+        <div class="w-full md:w-4/12 px-4">
+            <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg card">
+                <img alt="..." src="{{ url_for('static',path='./img/hm1.jpg')}}"
+                    class="w-full align-middle rounded-t-lg" />
+                <blockquote class="relative p-8 mb-4">
+                    <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"
+                        class="absolute left-0 w-full block" style="height: 95px; top: -94px;">
+                        <polygon points="-30,95 583,95 583,65" class="text-white fill-current"></polygon>
+                    </svg>
+                    <h4 class="text-xl font-bold text-gray-800">
+                        Top Notch Services
+                    </h4>
+                    <p class="text-md font-light mt-2 text-gray-700">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+                    </p>
+                </blockquote>
+            </div>
+        </div>
+        <div class="w-full md:w-4/12 px-4">
+            <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg card">
+                <img alt="..." src="{{ url_for('static',path='./img/hm2.jpg')}}"
+                    class="w-full align-middle rounded-t-lg" />
+                <blockquote class="relative p-8 mb-4">
+                    <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"
+                        class="absolute left-0 w-full block" style="height: 95px; top: -94px;">
+                        <polygon points="-30,95 583,95 583,65" class="text-white fill-current"></polygon>
+                    </svg>
+                    <h4 class="text-xl font-bold text-gray-800">
+                        Top Notch Services
+                    </h4>
+                    <p class="text-md font-light mt-2 text-gray-700">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+                    </p>
+                </blockquote>
+            </div>
+        </div>
+        <div class="w-full md:w-4/12 px-4">
+            <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg card">
+                <img alt="..." src="{{ url_for('static',path='./img/hm3.jpg')}}"
+                    class="w-full align-middle rounded-t-lg" />
+                <blockquote class="relative p-8 mb-4">
+                    <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"
+                        class="absolute left-0 w-full block" style="height: 95px; top: -94px;">
+                        <polygon points="-30,95 583,95 583,65" class="text-white fill-current"></polygon>
+                    </svg>
+                    <h4 class="text-xl font-bold text-gray-800">
+                        Top Notch Services
+                    </h4>
+                    <p class="text-md font-light mt-2 text-gray-700">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+                    </p>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 {% include 'footer.html' %}
 
