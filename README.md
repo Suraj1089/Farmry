@@ -91,10 +91,13 @@ You can clone the repository and make changes to it. It is open for all.
 </a>  
 
 ## Gallery
-```
+
+
 ![image](https://user-images.githubusercontent.com/85509795/205473592-a830c23f-fd89-4c79-a705-afc791ced4a8.png)
 
 ![image](https://user-images.githubusercontent.com/85509795/205473616-7f111c00-f1e3-4df0-a62a-f50735855dd9.png)
+
+
 ![image](https://user-images.githubusercontent.com/85509795/205473631-e7ef5aed-8176-4da9-adc4-4b9a9670f896.png)
 
 
