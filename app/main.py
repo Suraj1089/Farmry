@@ -4,8 +4,8 @@ from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
 from pathlib import Path
 import os
-from pydantic import BaseModel
 import pickle
+from .schemas import FertilizerModel,RainFallModel,RainFallPrediction,FertilizerPrediction,CropModel,CropPrediction
 
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -14,76 +14,6 @@ print("BASE DIR IS ********-", BASE_DIR)
 STATICFILES_DIR = os.path.join(BASE_DIR, "static")
 TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
 
-
-class CropModel(BaseModel):
-    """
-    Crop Model
-    fields: N,P,K,temperature,humidity,ph,rainfall
-    """
-    N: float
-    P: float
-    K: float
-    temperature: float
-    humidity: float
-    ph: float
-    rainfall: float
-
-
-class CropPrediction(BaseModel):
-    """
-    Crop Prediction
-    fields: crop
-    """
-    crop: str
-
-
-class FertilizerModel(BaseModel):
-    """
-    Fertilizer Model
-    fields: Temparature,Humidity ,Moisture,Soil Type,Crop Type,Nitrogen,Potassium,Phosphorous
-
-    """
-    Temparature: float
-    Humidity: float
-    Moisture: float
-    Soil_Type: str
-    Crop_Type: str
-    Nitrogen: float
-    Potassium: float
-    Phosphorous: float
-
-
-class FertilizerPrediction(BaseModel):
-    """
-    Fertilizer Prediction
-    fields: Fertilizer Name
-    """
-    Fertilizer_Name: str
-
-
-class RainFallModel(BaseModel):
-    """
-    RainFall Model
-    fields: "avg.temp","max.temp","min.temp","precipitation","avg.wind.speed","max.wind.speed","max.wind.speed.dir","max.inst.wind.speed","max.inst.wind.speed.dir","min.atmos.pressure"
-    """
-    avgTemp = float
-    maxTemp = float
-    minTemp = float
-    precipitation = float
-    avgWindSpeed = float
-    maxWindSpeed = float
-    maxWindSpeedDir = float
-    maxInstWindSpeed = float
-    maxInstWindSpeedDir = float
-    minAtmosPressure = float
-
-
-class RainFallPrediction(BaseModel):
-    """
-    RainFall Prediction
-    fields: RainFall(N: No rain L: Light rain H: Heavy rain)
-    """
-    RainFall = str
 
 
 app = FastAPI()

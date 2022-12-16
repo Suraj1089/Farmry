@@ -1,0 +1,88 @@
+
+<!--chat window-->
+
+<style>
+    button.fixed {
+  position: fixed;
+  /* Add values for the left, right, top, or bottom properties to specify the location of the button */
+}
+
+button.fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+#chatWindow {
+    width: 300px;
+    height: 400px;
+    /* change the position to slightly above the bottom of the screen */
+    bottom: 50px;
+  }
+
+
+
+</style>
+<button class="rounded-full w-12 h-12 flex items-center justify-center text-xl text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:shadow-outline-indigo fixed" onclick="showChatWindow()">
+    <i class="fas fa-comment"></i>
+  </button>
+  
+  <div id="chatWindow" class="hidden fixed bottom-0 right-16 w-128 h-128 bg-white rounded-lg shadow-lg">
+    <div class="flex flex-col h-full">
+      <div class="flex flex-col flex-1">
+        <div class="flex flex-col flex-1 p-4">
+          <div class="flex-1 overflow-y-auto">
+            <div class="flex flex-col space-y-4 py-4">
+              <div class="flex justify-end w-full">
+                <div class="px-4 py-2 rounded-lg inline-block rounded-br-none bg-indigo-500 text-white">
+                  Hi there, how can I help you?
+                </div>
+              </div>
+              <div class="flex justify-start w-full">
+                <div class="px-4 py-2 rounded-lg inline-block rounded-bl-none bg-gray-200">
+                  I want to know more about your services
+                </div>
+              </div>
+              <div class="flex justify-end w-full">
+                <div class="px-4 py-2 rounded-lg inline-block rounded-br-none bg-indigo-500 text-white">
+                  We provide the best services in the industry
+                </div>
+              </div>
+              <div class="flex justify-start w-full">
+                <div class="px-4 py-2 rounded-lg inline-block rounded-bl-none bg-gray-200">
+                  That's great to hear
+                </div>
+              </div>
+              <div class="flex justify-end w-full">
+                <div class="px-4 py-2 rounded-lg inline-block rounded-br-none bg-indigo-500 text-white">
+                  Thank you for your interest
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 border-t border-gray-200 p-4">
+          <div class="relative flex items-center">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+              <button type="button" class="text-gray-400 focus:outline-none focus:text-gray-500 transition ease-in-out duration-150">
+                <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M3 5a1 1" clip-rule="evenodd" />
+                </svg>
+                </button>
+            </span>
+
+    
+  
+    <script>
+
+        function showChatWindow() {
+            // if window is hidden, show it else hide it
+            if (document.getElementById("chatWindow").classList.contains("hidden")) {
+                document.getElementById("chatWindow").classList.remove("hidden");
+            } else {
+                document.getElementById("chatWindow").classList.add("hidden");
+            }
+        }
+
+  </script>
+  

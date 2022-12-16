@@ -103,6 +103,3 @@ You can clone the repository and make changes to it. It is open for all.
 
 
 
-Farmry is a website which helps farmers to predict rainfall,crop suggestion based on environment,soil and weather prediction.
-
-Top 5 in a hackathon organized by Microsoft azure subsidoary company - https://www.hackerearth.
