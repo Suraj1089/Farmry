@@ -5,7 +5,7 @@ from fastapi.responses import HTMLResponse
 from pathlib import Path
 import os
 import pickle
-from .schemas import FertilizerModel,RainFallModel,RainFallPrediction,FertilizerPrediction,CropModel,CropPrediction
+from schemas import FertilizerModel,RainFallModel,RainFallPrediction,FertilizerPrediction,CropModel,CropPrediction
 
 
 BASE_DIR = Path(__file__).resolve().parent
