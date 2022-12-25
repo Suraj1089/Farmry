@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request, status
+from fastapi import FastAPI, Request, status,Form
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
@@ -29,18 +29,7 @@ templates = Jinja2Templates(directory=TEMPLATES_DIR)
 async def index(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
-
-@app.get("/services", response_class=HTMLResponse)
-async def services(request: Request):
-    return templates.TemplateResponse("services.html", {"request": request})
-
-
-@app.post("/services/crop-prediction", response_model=CropPrediction, status_code=status.HTTP_200_OK)
-async def predict_crop(crop_model: CropModel):
-    """
-    Crop Prediction
-    """
-
+def cropPred(crop_model: CropModel):
     MODEL_PATH = os.path.join(BASE_DIR, "ml_models", "crop_recommender.pkl")
     with open(MODEL_PATH, "rb") as f:
         model = pickle.load(f)
@@ -50,42 +39,36 @@ async def predict_crop(crop_model: CropModel):
                              crop_model.humidity, crop_model.ph, crop_model.rainfall]])
         return CropPrediction(crop=crop[0])
     except:
-        status_code = status.HTTP_404_NOT_FOUND
         return CropPrediction(crop="Not Found")
 
+@app.get('/crop-prediction', response_class=HTMLResponse)
+async def cropPredForm(request: Request):
+    return templates.TemplateResponse("cropPred.html", {"request": request})
 
-@app.post("/services/fertilizer-prediction", response_model=FertilizerPrediction, status_code=status.HTTP_200_OK)
-async def predict_fertilizer(fertilizer_model: FertilizerModel):
-    """
-    Fertilizer Prediction
-    """
-    MODEL_PATH = os.path.join(BASE_DIR, "ml_models",
-                              "fertilizer_prediction.pkl")
-    with open(MODEL_PATH, "rb") as f:
-        model = pickle.load(f)
-
+@app.post("/crop-prediction", response_model=CropPrediction, status_code=status.HTTP_200_OK)
+async def cropPredForm(request: Request,nitrogen: float, phosphorus: float, potassium: float, temperature: float, humidity: float, ph: float, rainfall: float):
     try:
-        fertilizer = model.predict([[fertilizer_model.Temparature, fertilizer_model.Humidity, fertilizer_model.Moisture, fertilizer_model.Soil_Type,
-                                   fertilizer_model.Crop_Type, fertilizer_model.Nitrogen, fertilizer_model.Potassium, fertilizer_model.Phosphorous]])
-        return FertilizerPrediction(Fertilizer_Name=fertilizer[0])
-    except:
-        status_code = status.HTTP_400_BAD_REQUEST
-        return FertilizerPrediction(Fertilizer_Name="Not Found")
+        
+        cropPredResult = CropModel(N=nitrogen, P=phosphorus, K=potassium, temperature=temperature, humidity=humidity, ph=ph, rainfall=rainfall)
+        predictedCrop = cropPred(cropPredResult)
+        print(predictedCrop)
+
+        return templates.TemplateResponse("cropPred.html", {"request": request, "cropPredResult": cropPredResult})
+    
+    except ValueError:
+        return HTMLResponse(status_code=400, content="Invalid form field value")
 
 
-@app.post("/services/rainfall-prediction", response_model=RainFallPrediction, status_code=status.HTTP_200_OK)
-async def predict_rainfall(rainfall_model: RainFallModel):
-    """
-    RainFall Prediction
-    """
-    MODEL_PATH = os.path.join(BASE_DIR, "ml_models", "rain_prediction.pkl")
-    with open(MODEL_PATH, "rb") as f:
-        model = pickle.load(f)
 
-    try:
-        rainfall = model.predict([[rainfall_model.avgTemp, rainfall_model.maxTemp, rainfall_model.minTemp, rainfall_model.precipitation, rainfall_model.avgWindSpeed,
-                                 rainfall_model.maxWindSpeed, rainfall_model.maxWindSpeedDir, rainfall_model.maxInstWindSpeed, rainfall_model.maxInstWindSpeedDir, rainfall_model.minAtmosPressure]])
-        return RainFallPrediction(RainFall=rainfall[0])
-    except:
-        status_code = status.HTTP_400_BAD_REQUEST
-        return RainFallPrediction(RainFall="Not Found")
+
+@app.get('/register', response_class=HTMLResponse)
+async def register(request: Request):
+    return templates.TemplateResponse("register.html", {"request": request})
+
+
+@app.get('/login', response_class=HTMLResponse)
+async def login(request: Request):
+    return templates.TemplateResponse("login.html", {"request": request})
+
+
+

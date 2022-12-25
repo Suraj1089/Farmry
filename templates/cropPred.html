@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'navbar.html' %}
+
+<div class="mx-auto block p-6 rounded-lg shadow-lg bg-white max-w-sm">
+    <form action="/crop-prediction" method="post">
+      <div class="form-group mb-6">
+        <label for="exampleInputEmail2" class="form-label inline-block mb-2 text-gray-700">Nitrogen</label>
+        <input type="text" class="form-control
+          block
+          w-full
+          px-3
+          py-1.5
+          text-base
+          font-normal
+          text-gray-700
+          bg-white bg-clip-padding
+          border border-solid border-gray-300
+          rounded
+          transition
+          ease-in-out
+          m-0
+          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInputEmail2"
+          aria-describedby="emailHelp" name="nitrogen" placeholder="">
+      </div>
+      <div class="form-group mb-6">
+        <label for="exampleInputEmail2" class="form-label inline-block mb-2 text-gray-700">Phosporus</label>
+        <input type="text" class="form-control
+          block
+          w-full
+          px-3
+          py-1.5
+          text-base
+          font-normal
+          text-gray-700
+          bg-white bg-clip-padding
+          border border-solid border-gray-300
+          rounded
+          transition
+          ease-in-out
+          m-0
+          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInputEmail2"
+          aria-describedby="emailHelp" name="phosphorus" placeholder="">
+      </div>
+      <div class="form-group mb-6">
+        <label for="exampleInputEmail2" class="form-label inline-block mb-2 text-gray-700">Potassium</label>
+        <input type="text" class="form-control
+          block
+          w-full
+          px-3
+          py-1.5
+          text-base
+          font-normal
+          text-gray-700
+          bg-white bg-clip-padding
+          border border-solid border-gray-300
+          rounded
+          transition
+          ease-in-out
+          m-0
+          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInputEmail2"
+          aria-describedby="emailHelp" name="potassium" placeholder="">
+      </div>
+      <div class="form-group mb-6">
+        <label for="exampleInputEmail2" class="form-label inline-block mb-2 text-gray-700">temperature</label>
+        <input type="text" class="form-control
+          block
+          w-full
+          px-3
+          py-1.5
+          text-base
+          font-normal
+          text-gray-700
+          bg-white bg-clip-padding
+          border border-solid border-gray-300
+          rounded
+          transition
+          ease-in-out
+          m-0
+          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInputEmail2"
+          aria-describedby="emailHelp" name="temperature" placeholder="">
+      </div>
+      <div class="form-group mb-6">
+        <label for="exampleInputEmail2" class="form-label inline-block mb-2 text-gray-700">humidity</label>
+        <input type="text" class="form-control
+          block
+          w-full
+          px-3
+          py-1.5
+          text-base
+          font-normal
+          text-gray-700
+          bg-white bg-clip-padding
+          border border-solid border-gray-300
+          rounded
+          transition
+          ease-in-out
+          m-0
+          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInputEmail2"
+          aria-describedby="emailHelp" name="humidity" placeholder="">
+      </div>
+      <div class="form-group mb-6">
+        <label for="exampleInputEmail2" class="form-label inline-block mb-2 text-gray-700">Ph</label>
+        <input type="text" class="form-control
+          block
+          w-full
+          px-3
+          py-1.5
+          text-base
+          font-normal
+          text-gray-700
+          bg-white bg-clip-padding
+          border border-solid border-gray-300
+          rounded
+          transition
+          ease-in-out
+          m-0
+          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInputEmail2"
+          aria-describedby="emailHelp" name="ph" placeholder="">
+      </div>
+      <div class="form-group mb-6">
+        <label for="exampleInputEmail2" class="form-label inline-block mb-2 text-gray-700">Rainfall</label>
+        <input type="text " class="form-control
+          block
+          w-full
+          px-3
+          py-1.5
+          text-base
+          font-normal
+          text-gray-700
+          bg-white bg-clip-padding
+          border border-solid border-gray-300
+          rounded
+          transition
+          ease-in-out
+          m-0
+          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInputEmail2"
+          aria-describedby="emailHelp" name="rainfall" placeholder="">
+      </div>
+
+
+      <button type="submit" class="
+        w-full
+        px-6
+        py-2.5
+        bg-blue-600
+        text-white
+        font-medium
+        text-xs
+        leading-tight
+        uppercase
+        rounded
+        shadow-md
+        hover:bg-blue-700 hover:shadow-lg
+        focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
+        active:bg-blue-800 active:shadow-lg
+        transition
+        duration-150
+        ease-in-out">Predict</button>
+      <p class="text-gray-800 mt-6 text-center">Need Help? <a href="#!"
+          class="text-blue-600 hover:text-blue-700 focus:text-blue-700 transition duration-200 ease-in-out">Register</a>
+      </p>
+    </form>
+  </div>
+
+{% endblock %}
